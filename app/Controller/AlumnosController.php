@@ -56,7 +56,6 @@ class AlumnosController extends AppController {
                 $data = array(
                     'Alumno' => $this->request->data['Alumno'],
                     'DatoPadre' => $this->request->data['DatoPadre'],
-                    'DatoRepresentante' => $this->request->data['DatoRepresentante'],
                 );
                 
                 $data['DatoRepresentante'][0]['DatoRepresentado'] = $this->request->data['DatoRepresentado'];
