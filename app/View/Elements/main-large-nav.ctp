@@ -25,15 +25,6 @@
                         </li>
                         
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown">Alumnos <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li role="presentation" class="dropdown-header">Modúlo de Alumnos</li>
-                                <li><a href="<?php echo $this->Html->url(array('controller'=>'alumnos', 'action'=>'index'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Alumnos</a></li>
-                                <li><a href="<?php echo $this->Html->url(array('controller'=>'alumnos', 'action'=>'add'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Agregar Alumno</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-hover="dropdown">Períodos <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li role="presentation" class="dropdown-header">Modúlo de Períodos</li>
@@ -52,13 +43,31 @@
                         </li>
                         
                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown">Secciones <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation" class="dropdown-header">Modúlo de Secciones</li>
+                                <li><a href="<?php echo $this->Html->url(array('controller'=>'seccions', 'action'=>'add'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Agregar Sección</a></li>
+                                <li><a href="<?php echo $this->Html->url(array('controller'=>'seccions', 'action'=>'index'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Listar Secciones</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown">Alumnos <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation" class="dropdown-header">Modúlo de Alumnos</li>
+                                <li><a href="<?php echo $this->Html->url(array('controller'=>'alumnos', 'action'=>'index'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Alumnos</a></li>
+                                <li><a href="<?php echo $this->Html->url(array('controller'=>'alumnos', 'action'=>'add'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Agregar Alumno</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-hover="dropdown">Matriculas <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li role="presentation" class="dropdown-header">Modúlo de Matriculas</li>
                                 <li><a href="<?php echo $this->Html->url(array('controller'=>'matriculas', 'action'=>'add'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Inscribir Matricula</a></li>
                                 <li><a href="<?php echo $this->Html->url(array('controller'=>'matriculas', 'action'=>'index'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Lista de Matriculas</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         
                     </ul>
                 </div><!-- /.navbar-collapse -->

@@ -12,7 +12,7 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">Nombres</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('Alumno.isDelete', array('type'=>'hidden', 'value'=>true));?>
+                                <?php echo $this->Form->input('Alumno.isDelete', array('type'=>'hidden', 'value'=>0));?>
                                 <?php echo $this->Form->input('Alumno.nombres', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>

@@ -25,7 +25,6 @@ class AlumnosController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Alumno->recursive = 0;
                 
                 $options['conditions'] = array('Alumno.isDelete'=>0);
                 $options['fields'] = array('id', 'nombres', 'apellidos', 'cedula', 'sexo', 'created');
@@ -63,7 +62,7 @@ class AlumnosController extends AppController {
                 
                 if($this->Alumno->saveAssociated($this->request->data, array('deep'=>true))){
                     $this->Session->setFlash(__('Registro Finalizado Exitosamente.'));
-                    //return $this->redirect(array('action'=>'add'));
+                    return $this->redirect(array('action'=>'add'));
                 }
                 
                 //debug($data);
