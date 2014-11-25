@@ -14,7 +14,7 @@ class LugarNacimiento extends AppModel {
  *
  * @var array
  */
-	public $validate = array(
+	/*public $validate = array(
 		'estado_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -55,7 +55,7 @@ class LugarNacimiento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);
+	);*/
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -64,7 +64,7 @@ class LugarNacimiento extends AppModel {
  *
  * @var array
  */
-/*        
+       
 	public $belongsTo = array(
 		'Estado' => array(
 			'className' => 'Estado',
@@ -81,8 +81,6 @@ class LugarNacimiento extends AppModel {
 			'order' => ''
 		)
 	);
- * 
- */
 
 /**
  * hasMany associations

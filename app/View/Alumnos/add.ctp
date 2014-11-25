@@ -57,6 +57,172 @@
                     </fieldset>
                 
                     <fieldset>
+                        <legend>Información del Alumno</legend>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Talla de Pantalón</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoAlumno.0.talla_pantalon', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Talla de Camisa</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoAlumno.0.talla_camisa', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Talla de Zapatos</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoAlumno.0.talla_zapatos', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Peso</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoAlumno.0.peso', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Estatura</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoAlumno.0.estatura', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">¿Esta Becado?</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'DatoAlumno.0.isBecado', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>array('No'=>'No', 'Si'=>'Si'),
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Tipo de Beca</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'DatoAlumno.0.tipo_beca', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>array('Nacional'=>'Nacional', 'Estadal'=>'Estadal', 'Municipal'=>'Municipal', 'Privada'=>'Privada'),
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Lugar de Nacimiento</legend>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Estado</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'LugarNacimiento.0.estado_id', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>$estados,
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Municipio</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarNacimiento.0.municipio', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Parroquia</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarNacimiento.0.parroquia', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Ciudad</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarNacimiento.0.ciudad', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Lugar de Nacimiento</legend>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Estado</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'LugarResidencia.0.estado_id', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>$estados,
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Municipio</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarResidencia.0.municipio', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Parroquia</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarResidencia.0.parroquia', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Ciudad</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarResidencia.0.ciudad', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Ciudad</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('LugarResidencia.0.direccion', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                    </fieldset>
+                
+                    <fieldset>
                         <legend>Padres</legend>
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">Nombre Madre</label>
@@ -306,7 +472,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Vive con Grupo Familiar?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isViveGrupoFamiliar', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isViveGrupoFamiliar', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Si'=>'Si','No'=>'No'),
@@ -322,14 +488,14 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">Financista</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('DatoRepresentado.0.financista', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoRepresentado.0.financista', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">¿Distancia al Colegio?</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('DatoRepresentado.0.distancia_colegio', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoRepresentado.0.distancia_colegio', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
                         
@@ -337,7 +503,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Transporte?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.transporte', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.transporte', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Vehiculo Familiar'=>'Vehiculo Familiar','Transporte Publico'=>'Transporte Publico', 'Con Amigo'=>'Con Amigo', 'Privado'=>'Privado'),
@@ -354,7 +520,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Desayuna?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.desayuna', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.desayuna', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Casa'=>'Casa','Plantel'=>'Plantel', 'Otor'=>'Otro'),
@@ -371,7 +537,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Almuerza?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.almuerza', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.almuerza', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Casa'=>'Casa','Plantel'=>'Plantel', 'Otor'=>'Otro'),
@@ -387,7 +553,7 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">¿Presupuesto Diario?</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('DatoRepresentado.0.presupuesto_diarios', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoRepresentado.0.presupuesto_diarios', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
                         
@@ -395,7 +561,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Algun Familiar Becado?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isFamiliarBeca', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isFamiliarBeca', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('1'=>'Si','0'=>'No'),
@@ -411,7 +577,7 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">¿Cuantos Becados?</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('DatoRepresentado.0.cuantos', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoRepresentado.0.cuantos', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
                         
@@ -419,7 +585,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Presenta Debilidad?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isPresenteDebilidad', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isPresenteDebilidad', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Si'=>'Si','No'=>'No'),
@@ -436,7 +602,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿En la Vista?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isVista', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isVista', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Si'=>'Si','No'=>'No'),
@@ -453,7 +619,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿En los Oidos?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isOido', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isOido', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Si'=>'Si','No'=>'No'),
@@ -470,7 +636,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Convulsiona?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isConvulsiones', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isConvulsiones', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Si'=>'Si','No'=>'No'),
@@ -487,7 +653,7 @@
                             <label class="col-lg-2 control-label" for="select01">¿Caso Especial?</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input(
-                                        'DatoRepresentado.0.isCasoEspecial', 
+                                        'DatoRepresentante.0.DatoRepresentado.0.isCasoEspecial', 
                                         array(
                                             'type'=>'select',
                                             'options'=>array('Si'=>'Si','No'=>'No'),
@@ -503,17 +669,44 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">¿Otras?, Especifique</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('DatoRepresentado.0.otras', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoRepresentado.0.otras', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">Observaciones</label>
                             <div class="col-lg-10">
-                                <?php echo $this->Form->input('DatoRepresentado.0.observaciones', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoRepresentado.0.observaciones', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
                         
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Datos de la Vivienda</legend>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Tenencia</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'DatoRepresentante.0.DatoVivienda.0.tenencia', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>array(
+                                                'Propia'=>'Propia',
+                                                'Propia Pagandose'=>'Propia Pagándose',
+                                                'Alquilada'=>'Alquilada',
+                                                'Prestada'=>'Prestada'
+                                            ),
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+
                     </fieldset>
                 
                     <fieldset>
@@ -540,51 +733,6 @@
             stylesheets: [
                 'vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/wysiwyg-color.css'
             ]
-        });
-
-        $('#rootwizard').bootstrapWizard({
-            'nextSelector': '.next',
-            'previousSelector': '.previous',
-            onNext: function(tab, navigation, index) {
-                var $total = navigation.find('li').length;
-                var $current = index + 1;
-                var $percent = ($current / $total) * 100;
-                $('#rootwizard').find('.progress-bar').css('width', $percent + '%');
-                // If it's the last tab then hide the last button and show the finish instead
-                if ($current >= $total) {
-                    $('#rootwizard').find('.pager .next').hide();
-                    $('#rootwizard').find('.pager .finish').show();
-                    $('#rootwizard').find('.pager .finish').removeClass('disabled');
-                } else {
-                    $('#rootwizard').find('.pager .next').show();
-                    $('#rootwizard').find('.pager .finish').hide();
-                }
-            },
-            onPrevious: function(tab, navigation, index) {
-                var $total = navigation.find('li').length;
-                var $current = index + 1;
-                var $percent = ($current / $total) * 100;
-                $('#rootwizard').find('.progress-bar').css('width', $percent + '%');
-                // If it's the last tab then hide the last button and show the finish instead
-                if ($current >= $total) {
-                    $('#rootwizard').find('.pager .next').hide();
-                    $('#rootwizard').find('.pager .finish').show();
-                    $('#rootwizard').find('.pager .finish').removeClass('disabled');
-                } else {
-                    $('#rootwizard').find('.pager .next').show();
-                    $('#rootwizard').find('.pager .finish').hide();
-                }
-            },
-            onTabShow: function(tab, navigation, index) {
-                var $total = navigation.find('li').length;
-                var $current = index + 1;
-                var $percent = ($current / $total) * 100;
-                $('#rootwizard').find('.bar').css({width: $percent + '%'});
-            }
-        });
-        $('#rootwizard .finish').click(function() {
-            alert('Finished!, Starting over!');
-            $('#rootwizard').find('a[href*=\'tab1\']').trigger('click');
         });
     });
 </script>

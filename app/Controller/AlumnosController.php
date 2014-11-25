@@ -5,10 +5,11 @@ App::uses('AppController', 'Controller');
  *
  * @property Alumno $Alumno
  * @property PaginatorComponent $Paginator
+ * @property Estado $Estado
  */
 class AlumnosController extends AppController {
 
-    public $uses = array('Alumno', 'DatoPadre', 'DatoRepresentante', 'DatoRepresentado');
+    public $uses = array('Alumno', 'DatoPadre', 'DatoRepresentante', 'DatoRepresentado', 'Estado');
 
 
     /**
@@ -51,24 +52,19 @@ class AlumnosController extends AppController {
 	public function add() {
             if ($this->request->is('post')) {
                 
-                //debug($this->request->data);
+                debug($this->request->data);
                 
-                $data = array(
-                    'Alumno' => $this->request->data['Alumno'],
-                    'DatoPadre' => $this->request->data['DatoPadre'],
-                );
+                /*$this->Alumno->create();
                 
-                $data['DatoRepresentante'][0]['DatoRepresentado'] = $this->request->data['DatoRepresentado'];
-                
-                $this->Alumno->create();
-                
-                if($this->Alumno->saveAssociated($data, array('deep'=>true))){
+                if($this->Alumno->saveAssociated($this->request->data, array('deep'=>true))){
                     $this->Session->setFlash(__('Registro Finalizado Exitosamente.'));
                     //return $this->redirect(array('action'=>'add'));
-                }
+                }*/
                 
-                debug($data);
+                //debug($data);
             }
+                $estados = $this->Estado->find('list', array('fields'=>array('id', 'estado')));
+                $this->set('estados', $estados);
 	}
 
 /**

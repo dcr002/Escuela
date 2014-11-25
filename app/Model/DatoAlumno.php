@@ -12,6 +12,7 @@ class DatoAlumno extends AppModel {
  *
  * @var array
  */
+    /*
 	public $validate = array(
 		'alumno_id' => array(
 			'numeric' => array(
@@ -74,6 +75,7 @@ class DatoAlumno extends AppModel {
 			),
 		),
 	);
+*/
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -82,7 +84,7 @@ class DatoAlumno extends AppModel {
  *
  * @var array
  */
-/*
+
         public $belongsTo = array(
 		'Alumno' => array(
 			'className' => 'Alumno',
@@ -92,6 +94,4 @@ class DatoAlumno extends AppModel {
 			'order' => ''
 		)
 	);
- * 
- */
 }

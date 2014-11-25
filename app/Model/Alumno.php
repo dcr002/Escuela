@@ -76,6 +76,19 @@ class Alumno extends AppModel {
  * @var array
  */
 	public $hasMany = array(
+                'DatoAlumno' => array(
+			'className' => 'DatoAlumno',
+			'foreignKey' => 'alumno_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'DatoPadre' => array(
 			'className' => 'DatoPadre',
 			'foreignKey' => 'alumno_id',
@@ -102,7 +115,7 @@ class Alumno extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		/*'LugarNacimiento' => array(
+		'LugarNacimiento' => array(
 			'className' => 'LugarNacimiento',
 			'foreignKey' => 'alumno_id',
 			'dependent' => false,
@@ -115,7 +128,7 @@ class Alumno extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'LugarResidencia' => array(
+		/*'LugarResidencia' => array(
 			'className' => 'LugarResidencia',
 			'foreignKey' => 'alumno_id',
 			'dependent' => false,

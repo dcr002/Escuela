@@ -24,6 +24,7 @@
                 echo $this->Html->css('vendors/chosen.min');
                 echo $this->Html->css('vendors/selectize/dist/css/selectize.bootstrap3');
                 echo $this->Html->css('vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3');
+                echo $this->Html->css('estilo-personalizado');
                 
                 echo $this->Html->script('jquery-2.1.1.min');
                 echo $this->Html->script('bootstrap.min');
