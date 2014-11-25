@@ -12,7 +12,7 @@ class DatoVivienda extends AppModel {
  *
  * @var array
  */
-	public $validate = array(
+	/*public $validate = array(
 		'tenencia' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -93,7 +93,7 @@ class DatoVivienda extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);
+	);*/
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -102,7 +102,7 @@ class DatoVivienda extends AppModel {
  *
  * @var array
  */
-/*        
+       
 	public $belongsTo = array(
 		'DatoRepresentante' => array(
 			'className' => 'DatoRepresentante',
@@ -112,6 +112,5 @@ class DatoVivienda extends AppModel {
 			'order' => ''
 		)
 	);
- * 
- */
+
 }

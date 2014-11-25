@@ -190,13 +190,13 @@ class DatoRepresentante extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		/*'LugarNacimiento' => array(
+		'LugarNacimiento' => array(
 			'className' => 'LugarNacimiento',
 			'foreignKey' => 'lugar_nacimiento_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),*/
+		),
 		'Alumno' => array(
 			'className' => 'Alumno',
 			'foreignKey' => 'alumno_id',
@@ -239,7 +239,7 @@ class DatoRepresentante extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		/*'DatoVivienda' => array(
+		'DatoVivienda' => array(
 			'className' => 'DatoVivienda',
 			'foreignKey' => 'dato_representante_id',
 			'dependent' => false,
@@ -251,7 +251,7 @@ class DatoRepresentante extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)*/
+		)
 	);
 
 }

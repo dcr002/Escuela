@@ -1,12 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * LugarResidencia Model
+ * Grado Model
  *
- * @property Estado $Estado
- * @property Alumno $Alumno
+ * @property PeriodoAcademico $PeriodoAcademico
+ * @property Seccion $Seccion
  */
-class LugarResidencia extends AppModel {
+class Grado extends AppModel {
 
 /**
  * Validation rules
@@ -14,17 +14,7 @@ class LugarResidencia extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'estado_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'municipio' => array(
+		'grado' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -33,18 +23,16 @@ class LugarResidencia extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-		'ciudad' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+                        'unique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'Grado registrado.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'alumno_id' => array(
+		'periodo_academico_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -64,19 +52,34 @@ class LugarResidencia extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Estado' => array(
-			'className' => 'Estado',
-			'foreignKey' => 'estado_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Alumno' => array(
-			'className' => 'Alumno',
-			'foreignKey' => 'alumno_id',
+		'PeriodoAcademico' => array(
+			'className' => 'PeriodoAcademico',
+			'foreignKey' => 'periodo_academico_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Seccion' => array(
+			'className' => 'Seccion',
+			'foreignKey' => 'grado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

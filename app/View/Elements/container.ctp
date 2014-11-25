@@ -16,6 +16,12 @@
                 <li>
                     <a href="<?php echo $this->Html->url(array('controller'=>'alumnos', 'action'=>'add'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Agregar Alumno</a>
                 </li>
+                <li>
+                    <a href="<?php echo $this->Html->url(array('controller'=>'periodo_academicos', 'action'=>'add'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Agregar Período</a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->Html->url(array('controller'=>'periodo_academicos', 'action'=>'index'))?>"><i class="glyphicon glyphicon-chevron-right"></i> Listar Período</a>
+                </li>
                 <!--<li>
                     <a href="forms.html"><i class="glyphicon glyphicon-chevron-right"></i> Forms</a>
                 </li>

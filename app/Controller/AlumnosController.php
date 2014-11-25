@@ -26,7 +26,12 @@ class AlumnosController extends AppController {
  */
 	public function index() {
 		$this->Alumno->recursive = 0;
-		$this->set('alumnos', $this->Paginator->paginate());
+                
+                $options['conditions'] = array('Alumno.isDelete'=>0);
+                $options['fields'] = array('id', 'nombres', 'apellidos', 'cedula', 'sexo', 'created');
+                
+                $alumnos = $this->Alumno->find('all',$options);
+		$this->set('alumnos', $alumnos);
 	}
 
 /**
@@ -52,14 +57,14 @@ class AlumnosController extends AppController {
 	public function add() {
             if ($this->request->is('post')) {
                 
-                debug($this->request->data);
+                //debug($this->request->data);
                 
-                /*$this->Alumno->create();
+                $this->Alumno->create();
                 
                 if($this->Alumno->saveAssociated($this->request->data, array('deep'=>true))){
                     $this->Session->setFlash(__('Registro Finalizado Exitosamente.'));
                     //return $this->redirect(array('action'=>'add'));
-                }*/
+                }
                 
                 //debug($data);
             }
@@ -86,6 +91,9 @@ class AlumnosController extends AppController {
 				$this->Session->setFlash(__('The alumno could not be saved. Please, try again.'));
 			}
 		} else {
+                         $estados = $this->Estado->find('list', array('fields'=>array('id', 'estado')));
+                         $this->set('estados', $estados);
+                
 			$options = array('conditions' => array('Alumno.' . $this->Alumno->primaryKey => $id));
 			$this->request->data = $this->Alumno->find('first', $options);
 		}
@@ -101,13 +109,14 @@ class AlumnosController extends AppController {
 	public function delete($id = null) {
 		$this->Alumno->id = $id;
 		if (!$this->Alumno->exists()) {
-			throw new NotFoundException(__('Invalid alumno'));
+			throw new NotFoundException(__('Alumno Inválido.'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		if ($this->Alumno->delete()) {
-			$this->Session->setFlash(__('The alumno has been deleted.'));
+                $this->Alumno->set(array('isDelete'=>1));
+		if ($this->Alumno->save()) {
+			$this->Session->setFlash(__('Registros del Alumno Eliminados.'));
 		} else {
-			$this->Session->setFlash(__('The alumno could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('Registros no Eliminados.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

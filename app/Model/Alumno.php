@@ -128,7 +128,7 @@ class Alumno extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		/*'LugarResidencia' => array(
+		'LugarResidencia' => array(
 			'className' => 'LugarResidencia',
 			'foreignKey' => 'alumno_id',
 			'dependent' => false,
@@ -140,7 +140,7 @@ class Alumno extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)*/
+		),
 	);
 
 }

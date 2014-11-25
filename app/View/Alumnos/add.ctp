@@ -12,6 +12,7 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="focusedInput">Nombres</label>
                             <div class="col-lg-10">
+                                <?php echo $this->Form->input('Alumno.isDelete', array('type'=>'hidden', 'value'=>true));?>
                                 <?php echo $this->Form->input('Alumno.nombres', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
                         </div>
@@ -173,7 +174,7 @@
                     </fieldset>
                 
                     <fieldset>
-                        <legend>Lugar de Nacimiento</legend>
+                        <legend>Lugar de Residencia</legend>
                         
                         <div class="form-group">
                             <label class="col-lg-2 control-label" for="select01">Estado</label>
@@ -214,7 +215,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label class="col-lg-2 control-label" for="focusedInput">Ciudad</label>
+                            <label class="col-lg-2 control-label" for="focusedInput">Dirección</label>
                             <div class="col-lg-10">
                                 <?php echo $this->Form->input('LugarResidencia.0.direccion', array('label'=>false, 'div'=>false, 'class'=>'form-control'));?>
                             </div>
@@ -706,8 +707,187 @@
                                 );?>
                             </div>
                         </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Tipo de Vivienda</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'DatoRepresentante.0.DatoVivienda.0.tipo', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>array(
+                                                'Casa'=>'Casa',
+                                                'Casa de Vecindad'=>'Casa de Vecindad',
+                                                'Rancho'=>'Rancho',
+                                                'Apartamento'=>'Apartamento',
+                                                'Quinta'=>'Quinta'
+                                            ),
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Material Paredes</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.paredes', array('label'=>false, 'placeholder'=>'Materiales Predominantes en las paredes.', 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Material Techo</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.techo', array('label'=>false, 'placeholder'=>'Materiales Predominantes en el techo.', 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Material Pisos</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.piso', array('label'=>false, 'placeholder'=>'Materiales Predominantes en los pisos.', 'div'=>false, 'class'=>'form-control'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Cantidad Habitaciones</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'DatoRepresentante.0.DatoVivienda.0.habitaciones', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>array(
+                                                '1'=>'1 Habitación',
+                                                '2'=>'2 Habitaciones',
+                                                '3'=>'3 Habitaciones',
+                                                '4'=>'4 Habitaciones',
+                                                '5'=>'5 Habitaciones'
+                                            ),
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-4">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isSala', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Sala?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-4">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isComedor', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Comedor?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="select01">Cantidad Baños</label>
+                            <div class="col-lg-10">
+                                <?php echo $this->Form->input(
+                                        'DatoRepresentante.0.DatoVivienda.0.banos', 
+                                        array(
+                                            'type'=>'select',
+                                            'options'=>array(
+                                                '1'=>'1 Baño',
+                                                '2'=>'2 Baños',
+                                                '3'=>'3 Baños',
+                                                '4'=>'4 Baños',
+                                                '5'=>'5 Baños'
+                                            ),
+                                            'label'=>false, 
+                                            'div'=>false, 
+                                            'class'=>'chzn-select',
+                                            'style'=>array('width: 150px')
+                                        )
+                                );?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isGaraje', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Garage?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isPatio', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Patio?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
 
                     </fieldset>
+                    
+                     <fieldset>
+                        <legend>Servicios Publicos</legend>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isElectricidad', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio Electrico?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isAgua', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio de Agua Potable?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isAseo', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio de Aseo Urbano?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isCloacas', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio de Agua Servidad?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isTelefono', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio Teléfonico?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isAlumbrado', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio de Alumbrado?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isAsfalto', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Calles Asfalatadas?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput"></label>
+                            <div class="col-lg-5">
+                                <?php echo $this->Form->input('DatoRepresentante.0.DatoVivienda.0.isCable', array('label'=>array('class'=>'uniform', 'text'=>'¿Tiene Servicio Televisión por Cable?'), 'placeholder'=>'', 'div'=>false, 'class'=>'uniform_on'));?>
+                            </div>
+                        </div>
+                        
+                     </fieldset>
                 
                     <fieldset>
                         

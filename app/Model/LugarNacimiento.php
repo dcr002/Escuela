@@ -87,7 +87,7 @@ class LugarNacimiento extends AppModel {
  *
  * @var array
  */
-/*
+
 	public $hasMany = array(
 		'DatoRepresentante' => array(
 			'className' => 'DatoRepresentante',
@@ -103,7 +103,5 @@ class LugarNacimiento extends AppModel {
 			'counterQuery' => ''
 		)
 	);
- * 
- */
 
 }
