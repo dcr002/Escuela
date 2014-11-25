@@ -4,16 +4,19 @@ App::uses('AppController', 'Controller');
  * Grados Controller
  *
  * @property Grado $Grado
+ * @property PeriodoAcademico $PeriodoAcademico
  * @property PaginatorComponent $Paginator
  */
 class GradosController extends AppController {
 
-/**
+    /**
  * Components
  *
  * @var array
  */
 	public $components = array('Paginator');
+        
+        public $uses = array('Grado', 'PeriodoAcademico');
 
 /**
  * index method
@@ -22,7 +25,12 @@ class GradosController extends AppController {
  */
 	public function index() {
 		$this->Grado->recursive = 0;
-		$this->set('grados', $this->Paginator->paginate());
+                
+                $grados = $this->Grado->find('all');
+                $periodos = $this->PeriodoAcademico->find('list', array('fields'=>array('id', 'periodo')));
+                
+		$this->set('grados', $grados);
+                $this->set('periodos', $periodos);
 	}
 
 /**
@@ -49,13 +57,13 @@ class GradosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Grado->create();
 			if ($this->Grado->save($this->request->data)) {
-				$this->Session->setFlash(__('The grado has been saved.'));
+				$this->Session->setFlash(__('Grado Asociado al Período Actual.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The grado could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Grado no Registrado.'));
 			}
 		}
-		$periodoAcademicos = $this->Grado->PeriodoAcademico->find('list');
+		$periodoAcademicos = $this->Grado->PeriodoAcademico->find('list', array('fields'=>array('id', 'periodo')));
 		$this->set(compact('periodoAcademicos'));
 	}
 
@@ -72,16 +80,16 @@ class GradosController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Grado->save($this->request->data)) {
-				$this->Session->setFlash(__('The grado has been saved.'));
+				$this->Session->setFlash(__('Grado Editado y Asociado al Período Actual.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The grado could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Grado no Editado.'));
 			}
 		} else {
 			$options = array('conditions' => array('Grado.' . $this->Grado->primaryKey => $id));
 			$this->request->data = $this->Grado->find('first', $options);
 		}
-		$periodoAcademicos = $this->Grado->PeriodoAcademico->find('list');
+		$periodoAcademicos = $this->Grado->PeriodoAcademico->find('list', array('fields'=>array('id', 'periodo')));
 		$this->set(compact('periodoAcademicos'));
 	}
 

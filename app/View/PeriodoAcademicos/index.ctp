@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -18,11 +17,6 @@
                             <tr>
                                     <td><?php echo h($periodoAcademico['PeriodoAcademico']['periodo']); ?>&nbsp;</td>
                                     <td><?php echo h($periodoAcademico['PeriodoAcademico']['created']); ?>&nbsp;</td>
-                                     <!--<td class="actions">
-                                            <?php //echo $this->Html->link(__('Ver'), array('action' => 'view', $periodoAcademico['PeriodoAcademico']['id'])); ?>
-                                            <?php //echo $this->Html->link(__('Editar'), array('action' => 'edit', $periodoAcademico['PeriodoAcademico']['id'])); ?>
-                                            <?php //echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete',$periodoAcademico['PeriodoAcademico']['id']), array(), __('Desea eliminar el estado # %s?', $estado['Estado']['estado'])); ?>
-                                    </td>-->
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
